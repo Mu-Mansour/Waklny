@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.FragmentHome">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <EditText
+                android:id="@+id/theHome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:capitalize="characters"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:drawableEnd="@drawable/ic_baseline_search_24"
+                android:drawablePadding="@dimen/_8sdp"
+                android:hint="Looking for a meal starts with.."
+                android:inputType="text"
+                android:maxLength="1"
+                android:imeOptions="flagForceAscii"
+                android:minHeight="48dp"
+                android:textColor="@color/teal1_200"
+                android:textColorHint="@color/teal1_200"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/MealName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tetxt_shape"
+                android:backgroundTint="#4DB6B3B3"
+                android:elevation="1dp"
+                android:fontFamily="@font/myfont"
+                android:maxLength="100"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:shadowColor="@color/black"
+                android:textColor="@color/teal1_210"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/randomMeal"
+                app:layout_constraintEnd_toEndOf="@+id/randomMeal"
+                app:layout_constraintStart_toStartOf="@+id/randomMeal" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/itemsFromSearch"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_250sdp"
+                android:elevation="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/theHome"
+                app:layout_constraintStart_toStartOf="@+id/theHome"
+                app:layout_constraintTop_toBottomOf="@+id/theHome" />
+
+            <TextView
+                android:id="@+id/theThinking"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:text="What do you think of... "
+                android:textColor="#EDE7E7"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="normal|bold"
+                app:layout_constraintEnd_toEndOf="@+id/theHome"
+                app:layout_constraintStart_toStartOf="@+id/theHome"
+                app:layout_constraintTop_toBottomOf="@+id/theHome" />
+
+            <ImageView
+                android:id="@+id/randomMeal"
+                android:layout_width="@dimen/_280sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/theThinking"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:text="The most favorite items ..."
+                android:textColor="#FFFEFE"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="normal|bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/randomMeal" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/theFavoriteRV"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:text="Categories.."
+                android:textColor="#FFFEFE"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="normal|bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/theFavoriteRV" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/Types"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:foregroundGravity="fill_vertical"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
