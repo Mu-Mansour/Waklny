@@ -53,7 +53,7 @@ class SingleCategoryMeals : Fragment() {
             thisAdapterForThisMeals.updateTheMealsCat(it)
             theSingleCategoryMealView.  RVForAllFromSingleCategory.apply {
                 adapter =thisAdapterForThisMeals
-                layoutManager=GridLayoutManager(requireContext(),5,LinearLayoutManager.VERTICAL,false)
+                layoutManager=GridLayoutManager(requireContext(),4,LinearLayoutManager.VERTICAL,false)
             }
 
 
